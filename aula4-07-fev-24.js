@@ -40,21 +40,21 @@ if (number1 >= number2 && number1 >= number3) {
 //Desafio 4
 // - Verificação de Triângulo
 // Crie um programa que recebe três comprimentos de lados de um triângulo como entrada e determina se eles formam um triângulo equilátero (Todos os lados são iguais), isósceles (Dois lados são iguais) ou escaleno (Se nada é igual). Imprima a classificação do triângulo.
-// let firstSide = 8;
-// let scdSide = 8;
-// let thirdSide = 8;
+let firstSide = 8;
+let scdSide = 8;
+let thirdSide = 8;
 
-// if (firstSide === secSide && scdSide === thirdSide) {
-//   console.log("Equilátero, 3 lados iguais");
-// } else if (
-//   firstSide === scdSide ||
-//   firstSide === thirdSide ||
-//   scdSide === thirdSide
-// ) {
-//   console.log("Isósceles, só 2 lados são iguais");
-// } else {
-//   console.log("Escaleno, os três lados são diferentes");
-// }
+if (firstSide === scdSide && scdSide === thirdSide) {
+  console.log("Equilátero, 3 lados iguais");
+} else if (
+  firstSide === scdSide ||
+  firstSide === thirdSide ||
+  scdSide === thirdSide
+) {
+  console.log("Isósceles, só 2 lados são iguais");
+} else {
+  console.log("Escaleno, os três lados são diferentes");
+}
 
 // Desafio 5
 // - Verificação de Ano Bissexto
