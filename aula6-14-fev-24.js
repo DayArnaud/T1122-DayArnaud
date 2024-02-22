@@ -1,7 +1,6 @@
 // Exercício 1
 // Utilizando um loop for, calcule a soma dos números de 1 a 10 e imprima o resultado.
 // (1+2=3+3=6+4=10+5=15)
-
 let sum = 0;
 
 for (let i = 1; i <= 10; i++) {
@@ -70,6 +69,16 @@ for (const number of numbers) {
 // Exemplo:
 // Entrada: 6 Saída: [1 , 1, 2, 3, 5, 8]
 // Entrada: 14 Saída: [1, 1, 2, 3, 5, 8, 13, ..., 377]
+const generateFibonacci = (n) => {
+  let sequence = [1, 1];
+
+  for (let i = 2; i < n; i++) {
+    sequence[i] = sequence[i - 1] + sequence[i - 2];
+  }
+  return sequence.slice(0, n);
+};
+console.log(generateFibonacci(6));
+console.log(generateFibonacci(14));
 
 // Desafio 8
 // Crie um programa que pede ao usuário para inserir uma palavra e conta quantas vogais (a, e, i, o, u) ela contém. Utilize um loop for e estruturas condicionais if para realizar a contagem.
@@ -83,7 +92,6 @@ for (const letter of insertedWord) {
     vowelCounter++;
   }
 }
-
 console.log(vowelCounter);
 
 // Desafio 9
@@ -100,12 +108,38 @@ console.log(newArray);
 // Fazer um simulador de rolagem de dados, que receba como input N dados de 6 lados e mostre as rolagens individuais e a soma dos valores
 // Entradas:
 // Quantidade de dados: 2
+const rollDiceFirst = (numberOfDice) => {
+  let rolls = [];
+  let sum = 0;
+
+  for (let i = 0; i < numberOfDice; i++) {
+    let roll = Math.floor(Math.random() * 6) + 1;
+    rolls.push(roll);
+    sum += roll;
+  }
+  console.log(`Rolls: ${rolls.join(", ")}`);
+  console.log(`Sum: ${sum}`);
+};
+rollDiceFirst(2);
 
 // Super Desafio +
 // 11 - Fazer um simulador de rolagem de dados, que receba como input N dados e N lados e mostre as rolagens individuais e a soma dos valores?
 // Entradas:
 // Quantidade de dados: 2
 // Quantidade de lados: 9
+function rollDiceScd(numberOfDice, numberOfSides) {
+  let rolls = [];
+  let sum = 0;
+
+  for (let i = 0; i < numberOfDice; i++) {
+    let roll = Math.floor(Math.random() * numberOfSides) + 1;
+    rolls.push(roll);
+    sum += roll;
+  }
+  console.log(`Rolls: ${rolls.join(", ")}`);
+  console.log(`Sum: ${sum}`);
+}
+rollDiceScd(2, 9);
 
 // Super Desafio ++
 // 12 - Fazer um simulador de rolagem de dados, que receba como input N dados e N lados e quantidade de tentativas e mostre as rolagens individuais e a soma dos valores
@@ -113,3 +147,21 @@ console.log(newArray);
 // Quantidade de dados: 3
 // Quantidade de lados: 9
 // Quantidade de tentativas: 3
+const rollDiceThird = (numberOfDice, numberOfSides, numberOfAttempts) => {
+  for (let attempt = 0; attempt < numberOfAttempts; attempt++) {
+    let rolls = [];
+    let sum = 0;
+
+    for (let i = 0; i < numberOfDice; i++) {
+      let roll = Math.floor(Math.random() * numberOfSides) + 1;
+      rolls.push(roll);
+      sum += roll;
+    }
+    console.log(
+      `Attempt ${attempt + 1}: Rolls: ${rolls.join(", ")}, Sum: ${sum}`
+    );
+  }
+};
+rollDiceThird(3, 9, 3);
+
+console.log(Math.floor(Math.random() * 6 + 1));
