@@ -16,7 +16,7 @@ if (number % 2 === 0) {
 // - Se a nota for maior ou igual a 90, imprima "Aprovado com mérito".
 // - Se a nota for maior ou igual a 70 e menor que 90, imprima "Aprovado".
 // - Se a nota for menor que 70, imprima "Reprovado".
-let rate = 78; // Substitua 85 pela nota que você quer verificar
+let rate = 78;
 
 console.log(
   rate >= 90 ? "Aprovado com mérito" : rate >= 70 ? "Aprovado" : "Reprovado"
@@ -88,7 +88,7 @@ switch (number % 2) {
     console.log(`O número ${numero} é par`);
     break;
   case 1:
-    console.log(`O número ${numero} é par`);
+    console.log(`O número ${numero} é ímpar`);
     break;
   default:
     console.log("O número deve ser inteiro para ser considerado par ou ímpar");
